@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>九家粥铺</title>
+  <icon>https://www.gravatar.com/avatar/265c1151587ad73bde274335f9707673</icon>
+  <subtitle>码字，悠游。</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://Maikiki.github.io/"/>
+  <updated>2019-06-08T18:01:27.000Z</updated>
+  <id>https://Maikiki.github.io/</id>
+  
+  <author>
+    <name>粥小九</name>
+    <email>zhou0_0jiu@163.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Installing MySQL on Mac</title>
+    <link href="https://Maikiki.github.io/2018/09/29/article/"/>
+    <id>https://Maikiki.github.io/2018/09/29/article/</id>
+    <published>2018-09-29T06:23:53.000Z</published>
+    <updated>2019-06-08T18:01:27.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="TECH" scheme="https://Maikiki.github.io/categories/TECH/"/>
+    
+      <category term="Database" scheme="https://Maikiki.github.io/categories/TECH/Database/"/>
+    
+    
+      <category term="MySQL" scheme="https://Maikiki.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+</feed>
