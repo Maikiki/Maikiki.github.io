@@ -197,14 +197,14 @@
 
                         
                         <li>
-                            <a href="/categories/">Categories</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/categories/">Categories</a>
                         </li>
                         
                     
@@ -270,11 +270,11 @@
         </button>
         <div id="QR" style="display: none;">
             <div id="wechat" style="display: inline-block">
-                <img id="wechat_qr" src="https://github.com/CatherineLiyuankun/PictureBed/raw/master/blog/base/wechatpay.png" alt="WeChat Pay" style="width: 200px; height: 200px; text-align: center;">
+                <img id="wechat_qr" src="img/wechatpay.jpeg" alt="WeChat Pay" style="width: 200px; height: 200px; text-align: center;">
             <!-- <p>Wechat</p> -->
             </div>
             <div id="alipay" style="display: inline-block">
-                <img id="alipay_qr" src="https://github.com/CatherineLiyuankun/PictureBed/raw/master/blog/base/alipay.png" alt="Alipay" style="width: 200px; height: 200px; text-align: center;">
+                <img id="alipay_qr" src="img/alipay.jpeg" alt="Alipay" style="width: 200px; height: 200px; text-align: center;">
             <!-- <p>Alipay</p> -->
             </div>
         </div>
@@ -317,8 +317,7 @@
     <hr>
     <div class="git_comment" id="git_comment">
         
-            <div onclick="showGitment()" id="gitment-display-button">show git comment</div>
-            <div id="gitment-container" style="display:none"></div>
+            <div id="gitment-container"></div>
         
     </div>
     <hr>
@@ -432,6 +431,15 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <ul class="list-inline text-center">
                 
+                    <li>
+                        <a href="/atom.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
 
                 
 
@@ -460,6 +468,15 @@
                 
 
                 
+                    <li>
+                        <a target="_blank" href="mailto:zhou0_0jiu@163.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
 
                 
 
@@ -469,13 +486,6 @@
                 <p class="copyright text-muted">
                     Copyright &copy; 粥小九 2019 
                     <br>
-                    Theme by <a href="http://beantech.org/">YuHsuan</a> 
-                    <span style="display: inline-block; margin: 0 5px;">
-                        <i class="fa fa-heart"></i>
-                    </span> 
-                    re-Ported by <a href="https://github.com/CatherineLiyuankun">Li, Yuankun</a> | 
-                    <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=catherineliyuankun&repo=hexo-theme-zilan&type=star&count=true">
-                    </iframe>
                 </p>
             </div>
         </div>
@@ -640,11 +650,6 @@
         
     <!-- END LOCAL -->
         
-        <style>
-            a.gitment-editor-footer-tip { display: none; }
-            .gitment-container.gitment-footer-container { display: none; }
-        </style>
-        
 
         
         <script type="text/javascript">
@@ -678,7 +683,7 @@
                 gitment.render('gitment-container');
             }
 
-            if(!true) {
+            if(!false) {
                 renderGitment();
             } else {
                 function showGitment(){
