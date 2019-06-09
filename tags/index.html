@@ -87,7 +87,7 @@
 
     
     #header-cover{
-        background-color: rgba(0,0,0,.2);
+        background-color: rgba(0,0,0,.5);
     }
     
 </style>
@@ -162,14 +162,14 @@
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/categories/">Categories</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/categories/">Categories</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -224,16 +224,42 @@
     <!-- 标签云 -->
     <div id="tag_cloud" class="tags">
         
+            <a href="#言情" title="言情" rel="1">言情</a>
+        
             <a href="#Hexo" title="Hexo" rel="0">Hexo</a>
         
             <a href="#Blog" title="Blog" rel="0">Blog</a>
-        
-            <a href="#MySQL" title="MySQL" rel="1">MySQL</a>
         
     </div>
 
     <!-- 标签列表 -->
 
+    
+    <div class="one-tag-list">
+        <span class="fa fa-tag listing-seperator" id="言情">
+            <span class="tag-text">言情</span>
+        </span>
+        
+            <!-- <li class="listing-item">
+            <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+            <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+            </li> -->
+            <div class="post-preview">
+                <a href="/2018/09/29/xiaoer_0/">
+                <h2 class="post-title">
+                    楔子 肖洱的船
+                </h2>
+                
+                    <h3 class="post-subtitle">
+                        这是副标题
+                    </h3>
+                
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </div>
+        <hr>
+        
+    </div>
     
     <div class="one-tag-list">
         <span class="fa fa-tag listing-seperator" id="Hexo">
@@ -246,32 +272,6 @@
         <span class="fa fa-tag listing-seperator" id="Blog">
             <span class="tag-text">Blog</span>
         </span>
-        
-    </div>
-    
-    <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="MySQL">
-            <span class="tag-text">MySQL</span>
-        </span>
-        
-            <!-- <li class="listing-item">
-            <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-            <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-            </li> -->
-            <div class="post-preview">
-                <a href="/2018/09/29/article/">
-                <h2 class="post-title">
-                    Installing MySQL on Mac
-                </h2>
-                
-                    <h3 class="post-subtitle">
-                        zsh: command not found
-                    </h3>
-                
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </div>
-        <hr>
         
     </div>
     
