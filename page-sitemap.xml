@@ -28,14 +28,14 @@
     </url>
     
     <url>
-        <loc>https://Maikiki.github.io/categories/</loc>
+        <loc>https://Maikiki.github.io/tags/</loc>
         <lastmod>2019-06-08T19:42:23.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://Maikiki.github.io/tags/</loc>
+        <loc>https://Maikiki.github.io/categories/</loc>
         <lastmod>2019-06-08T19:42:23.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
