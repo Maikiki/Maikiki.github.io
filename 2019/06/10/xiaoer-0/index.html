@@ -113,6 +113,16 @@
                                 </div>
                             
                             
+                                <span class="post-comments-count">
+                                    <span class="post-meta-divider">|</span>
+                                    <a href="/2019/06/10/xiaoer-0/#git_comment" itemprop="discussionUrl">
+                                        <span class="post-meta-item-icon">
+                                            <i class="fa fa-comment-o"></i>
+                                        </span>
+                                        <span class="post-comments-count gitment-comments-count" data-xid="/2019/06/10/xiaoer-0/" itemprop="commentsCount"></span>
+                                    </a>
+                                </span>
+                            
                             <h1>
                                 楔子 肖洱的船
                                 <!-- Share -->
@@ -308,6 +318,14 @@
 
                 <!-- Git Comment -->
                 <!-- gitment -->
+
+    <hr>
+    <div class="git_comment" id="git_comment">
+        
+            <div id="gitment-container"></div>
+        
+    </div>
+    <hr>
 
             </div>
             
@@ -620,6 +638,58 @@
 
     <!-- Git Comment -->
     
+    
+    <!-- LOCAL: You can save these files to your site and update links -->
+        
+            <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+            <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+        
+    <!-- END LOCAL -->
+        
+
+        
+        <script type="text/javascript">
+            var option = {
+                id: window.location.pathname,
+                owner: 'Maikiki',
+                repo: 'gitment-comments',
+                oauth: {
+                    client_id: 'c2c18e7e25d349eaba2d'
+                }
+            };
+            if(true) {
+                option.lang = "null" || navigator.language || navigator.systemLanguage || navigator.userLanguage;
+            }
+            if (true && null) {
+                option.oauth.redirect_protocol = 'null';
+            }
+            if (true && null) {
+                option.oauth.proxy_gateway = 'null';
+            } else {
+                option.oauth.client_secret = 'e5ce242b3f227214b44e968d248aeae94943d9fb';
+            }
+
+            function renderGitment(){
+                var gitment;
+                if (true) {
+                    gitment = new Gitmint(option);
+                } else {
+                    gitment = new Gitment(option);
+                }
+                gitment.render('gitment-container');
+            }
+
+            if(!false) {
+                renderGitment();
+            } else {
+                function showGitment(){
+                    document.getElementById("gitment-display-button").style.display = "none";
+                    document.getElementById("gitment-container").style.display = "block";
+                    renderGitment();
+                }
+            }
+        </script>
+        
     
 
 
