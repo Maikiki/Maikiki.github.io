@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://Maikiki.github.io</loc>
+        <loc>https://zhouxiao9.top</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
     
     <url>
-        <loc>https://Maikiki.github.io/google96e852a5ce6e477b.html</loc>
+        <loc>https://zhouxiao9.top/google96e852a5ce6e477b.html</loc>
         <lastmod>2019-06-13T11:54:45.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://Maikiki.github.io/about/</loc>
+        <loc>https://zhouxiao9.top/about/</loc>
         <lastmod>2019-06-10T12:12:09.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://Maikiki.github.io/archive/</loc>
+        <loc>https://zhouxiao9.top/archive/</loc>
         <lastmod>2019-06-10T12:11:50.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://Maikiki.github.io/categories/</loc>
+        <loc>https://zhouxiao9.top/categories/</loc>
         <lastmod>2019-06-10T12:11:42.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://Maikiki.github.io/tags/</loc>
+        <loc>https://zhouxiao9.top/tags/</loc>
         <lastmod>2019-06-10T12:11:16.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>https://Maikiki.github.io/404.html</loc>
+        <loc>https://zhouxiao9.top/404.html</loc>
         <lastmod>2019-06-08T19:42:23.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
