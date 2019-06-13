@@ -1,0 +1,10 @@
+User-agent: * Allow: /
+Allow: /archives/
+Allow: /about/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /images/
+
+Sitemap: https://zhouxiao9.top/sitemap.xml
+Sitemap: http://zhouxiao9.top/baidusitemap.xml
