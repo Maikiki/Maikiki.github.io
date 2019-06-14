@@ -7,4 +7,4 @@ Disallow: /fonts/
 Disallow: /images/
 
 Sitemap: https://zhouxiao9.top/sitemap.xml
-Sitemap: http://zhouxiao9.top/baidusitemap.xml
+Sitemap: https://zhouxiao9.top/baidusitemap.xml

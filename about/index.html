@@ -104,7 +104,7 @@
                         <div class="site-heading">
                             <h1>关于</h1>
                             <!--<hr class="small">-->
-                            <span class="subheading">Wish for the Best, Prepare for the Worst</span>
+                            <span class="subheading">磨皮挫骨，埋头码字。</span>
                         </div>
                     
                     </div>
@@ -229,8 +229,7 @@
             ">
             
                 <blockquote>
-<p>Begin with a full stack soft engineer, then a machine learning engineer, now a frontend engineer!<br>
-A girl still have colorful dream.</p>
+<p>有什么想对我说的，留言吧~</p>
 </blockquote>
 
 
@@ -295,7 +294,7 @@ A girl still have colorful dream.</p>
         <h5><a href="/categories/">分类</a></h5>
             
                 <div class="article-category" id="categories">
-                    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/小说/">小说</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/小说/肖洱的船/">肖洱的船</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/小说/肖洱的船/楔子/">楔子</a><span class="category-list-count">1</span></li></ul></li></ul></li></ul>
+                    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/小说/">小说</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/小说/肖洱的船/">肖洱的船</a><span class="category-list-count">1</span></li></ul></li></ul>
                 </div>
             
     </section>
@@ -381,7 +380,7 @@ A girl still have colorful dream.</p>
     <ul>
       
         <li>
-          <a href="/2019/06/10/xiaoer-0/">楔子 肖洱的船</a>
+          <a href="/2019/06/14/xiaoerdechuan-0/">楔子 肖洱的船</a>
         </li>
       
     </ul>
@@ -589,7 +588,7 @@ A girl still have colorful dream.</p>
           var iconStyle = "light";
           var boxForm = "horizontal";
           var position = "bottom";
-          var networks = "Wechat,Weibo,Douban,Twitter,Facebook,Reddit,Linkedin,Evernote";
+          var networks = "Wechat,Weibo,Douban,Evernote,";
           pbOptions["iconStyle"] = iconStyle;
           pbOptions["boxForm"] = boxForm;
           pbOptions["position"] = position;
@@ -605,7 +604,7 @@ A girl still have colorful dream.</p>
           var iconStyle = "light";
           var boxForm = "horizontal";
           var position = "middleRight";
-          var networks = "Wechat,Weibo,Douban,Twitter,Facebook,Reddit,Linkedin,Evernote";
+          var networks = "Wechat,Weibo,Douban,Evernote,";
           pbOptions["iconStyle"] = iconStyle;
           pbOptions["boxForm"] = boxForm;
           pbOptions["position"] = position;
@@ -637,10 +636,15 @@ A girl still have colorful dream.</p>
     
     <!-- LOCAL: You can save these files to your site and update links -->
         
-            <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
-            <script src="https://billts.site/js/gitment.js"></script>
+            <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+            <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
         
     <!-- END LOCAL -->
+        
+        <style>
+            a.gitment-editor-footer-tip { display: none; }
+            .gitment-container.gitment-footer-container { display: none; }
+        </style>
         
 
         
@@ -653,13 +657,13 @@ A girl still have colorful dream.</p>
                     client_id: '6fd6a5876b7a889a649f'
                 }
             };
-            if(false) {
-                option.lang = "null" || navigator.language || navigator.systemLanguage || navigator.userLanguage;
+            if(true) {
+                option.lang = "zh-CN# Force language, or auto switch by theme" || navigator.language || navigator.systemLanguage || navigator.userLanguage;
             }
-            if (false && null) {
+            if (true && null) {
                 option.oauth.redirect_protocol = 'null';
             }
-            if (false && null) {
+            if (true && null) {
                 option.oauth.proxy_gateway = 'null';
             } else {
                 option.oauth.client_secret = 'fd55c9eb7493f9f6bb0b1a8342ff40e80aba7614';
@@ -667,7 +671,7 @@ A girl still have colorful dream.</p>
 
             function renderGitment(){
                 var gitment;
-                if (false) {
+                if (true) {
                     gitment = new Gitmint(option);
                 } else {
                     gitment = new Gitment(option);
