@@ -2,7 +2,8 @@ backend:
   name: github
   repo: Maikiki/Maikiki.github.io
   branch: main
-  base_url: https://zhouxiao9.top # 使用 git-gateway 或 OAuth 时按实际情况调整
+  auth_type: pkce
+  app_id: Ov23liGLWfxriU12PSgj
 
 media_folder: public/img/uploads
 public_folder: /img/uploads

@@ -12,11 +12,11 @@ export const SITE = {
     douyin: 'https://www.douyin.com/user/your-id', // TODO: 替换为你的抖音主页
     ao3: 'https://archiveofourown.org/users/your-name', // TODO: 替换为你的 AO3 主页
   },
-  // Giscus 评论配置（需在 GitHub 仓库启用 Discussions 后填写）
+  // Giscus 评论配置
   giscus: {
     repo: 'Maikiki/Maikiki.github.io',
-    repoId: '', // TODO: 从 giscus.app 获取
+    repoId: 'MDEwOlJlcG9zaXRvcnkxOTA5MTAyMzU=',
     category: 'General',
-    categoryId: '', // TODO: 从 giscus.app 获取
+    categoryId: 'DIC_kwDOC2EPG84DHCU2',
   },
 };

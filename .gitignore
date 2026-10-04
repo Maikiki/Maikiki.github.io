@@ -1,6 +1,7 @@
 # 依赖与构建产物
 node_modules/
 dist/
+.astro/
 
 # 日志
 npm-debug.log*
