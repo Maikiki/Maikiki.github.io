@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: Maikiki/Maikiki.github.io
-  branch: main
+  branch: master
   auth_type: pkce
   app_id: Ov23liGLWfxriU12PSgj
 
