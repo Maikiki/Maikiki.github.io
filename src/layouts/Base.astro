@@ -1,0 +1,67 @@
+---
+import '../styles/global.css';
+import { SITE } from '../config';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description = SITE.description } = Astro.props;
+const pageTitle = title ? `${title} | ${SITE.title}` : `${SITE.title} | ${SITE.author}`;
+---
+
+<!doctype html>
+<html lang={SITE.lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href="/img/cat-icon-512.png" />
+    <link rel="alternate" type="application/rss+xml" title={SITE.title} href="/rss.xml" />
+    <title>{pageTitle}</title>
+    <script is:inline>
+      // 主题初始化（防闪烁）
+      const theme = localStorage.getItem('theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      if (theme === 'dark') document.documentElement.classList.add('dark');
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container inner">
+        <a class="site-title" href="/">{SITE.title}</a>
+        <nav class="site-nav">
+          <a href="/archives/">归档</a>
+          <a href="/tags/">标签</a>
+          <a href="/search/">搜索</a>
+          <a href="/about/">关于</a>
+          <button id="theme-toggle" aria-label="切换主题">◐</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="container inner">
+        <div>© {new Date().getFullYear()} {SITE.author} · <a href="/rss.xml" style="color:inherit">RSS</a></div>
+        <div class="social-links">
+          <a href={SITE.social.xiaohongshu} target="_blank" rel="noopener">小红书</a>
+          <a href={SITE.social.douyin} target="_blank" rel="noopener">抖音</a>
+          <a href={SITE.social.ao3} target="_blank" rel="noopener">AO3</a>
+        </div>
+      </div>
+    </footer>
+
+    <script is:inline>
+      const btn = document.getElementById('theme-toggle');
+      btn?.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      });
+    </script>
+  </body>
+</html>

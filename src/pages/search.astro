@@ -1,0 +1,79 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="搜索">
+  <div class="hero">
+    <h1>搜索</h1>
+    <p>输入关键词搜索站内文章</p>
+  </div>
+
+  <div class="search-box">
+    <input
+      id="search-input"
+      type="search"
+      placeholder="搜索文章标题、内容、标签……"
+      autocomplete="off"
+    />
+  </div>
+
+  <div id="search-results"></div>
+
+  <script is:inline>
+    const input = document.getElementById('search-input');
+    const resultsEl = document.getElementById('search-results');
+
+    let pagefind = null;
+
+    async function initPagefind() {
+      if (pagefind) return pagefind;
+      try {
+        pagefind = await import('/pagefind/pagefind.js');
+        await pagefind.init();
+        return pagefind;
+      } catch (e) {
+        resultsEl.innerHTML =
+          '<p style="color:var(--fg-faint)">搜索功能仅在构建后可用，开发模式下无法使用。</p>';
+        return null;
+      }
+    }
+
+    function escapeHtml(s) {
+      const div = document.createElement('div');
+      div.textContent = s;
+      return div.innerHTML;
+    }
+
+    input?.addEventListener('input', async (e) => {
+      const query = e.target.value.trim();
+      if (!query) {
+        resultsEl.innerHTML = '';
+        return;
+      }
+
+      const pf = await initPagefind();
+      if (!pf) return;
+
+      const search = await pf.search(query);
+      const results = await Promise.all(
+        search.results.slice(0, 20).map((r) => r.data())
+      );
+
+      if (results.length === 0) {
+        resultsEl.innerHTML = '<p style="color:var(--fg-faint)">没有找到相关内容。</p>';
+        return;
+      }
+
+      resultsEl.innerHTML = results
+        .map(
+          (r) => `
+        <div class="search-result">
+          <h3><a href="${r.url}">${escapeHtml(r.meta?.title || '无标题')}</a></h3>
+          <p>${escapeHtml((r.excerpt || '').replace(/<[^>]+>/g, ''))}</p>
+        </div>
+      `
+        )
+        .join('');
+    });
+  </script>
+</Base>

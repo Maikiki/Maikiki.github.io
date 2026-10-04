@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).filter((p) => !p.data.draft);
+const tags = [...new Set(posts.flatMap((p) => p.data.tags))].sort();
+
+const counts = tags.map((tag) => ({
+  tag,
+  count: posts.filter((p) => p.data.tags.includes(tag)).length,
+}));
+---
+
+<Base title="标签">
+  <div class="hero">
+    <h1>标签</h1>
+    <p>共 {tags.length} 个</p>
+  </div>
+
+  <div class="tag-cloud">
+    {
+      counts.map(({ tag, count }) => (
+        <a href={`/tags/${encodeURIComponent(tag)}/`}>
+          #{tag} <span style="color:var(--fg-faint);font-size:0.8em">({count})</span>
+        </a>
+      ))
+    }
+  </div>
+</Base>

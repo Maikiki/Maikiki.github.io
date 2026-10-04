@@ -1,0 +1,92 @@
+---
+import Base from './Base.astro';
+import { SITE } from '../config';
+
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  title: string;
+  date: Date;
+  updated?: Date;
+  category: string;
+  tags: string[];
+  readingTime: string;
+  headings: Heading[];
+  showToc?: boolean;
+  prev?: { slug: string; title: string } | null;
+  next?: { slug: string; title: string } | null;
+}
+
+const { title, date, updated, category, tags, readingTime, headings, showToc = true, prev, next } = Astro.props;
+
+const tocHeadings = headings.filter((h) => h.depth === 2 || h.depth === 3);
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('zh-CN', { year: 'numeric', month: '2-digit', day: '2-digit' });
+---
+
+<Base title={title}>
+  <article>
+    <header class="post-header">
+      <h1>{title}</h1>
+      <div class="meta">
+        <time datetime={date.toISOString()}>{fmt(date)}</time>
+        {updated && <span>更新于 {fmt(updated)}</span>}
+        <a href={`/categories/${encodeURIComponent(category)}/`}>{category}</a>
+        {tags.map((t) => <a href={`/tags/${encodeURIComponent(t)}/`}>#{t}</a>)}
+        <span>{readingTime}</span>
+      </div>
+    </header>
+
+    {
+      showToc && tocHeadings.length > 0 && (
+        <nav class="toc">
+          <div class="toc-title">目录</div>
+          <ul>
+            {tocHeadings.map((h) => (
+              <li style={h.depth === 3 ? 'padding-left:1.25rem' : ''}>
+                <a href={`#${h.slug}`}>{h.text}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )
+    }
+
+    <div class="prose">
+      <slot />
+    </div>
+
+    <nav class="post-nav">
+      <span>
+        {prev && <a href={`/posts/${prev.slug}/`}>← {prev.title}</a>}
+      </span>
+      <span>
+        {next && <a href={`/posts/${next.slug}/`}>{next.title} →</a>}
+      </span>
+    </nav>
+
+    <section class="comments" id="comments">
+      <script
+        src="https://giscus.app/client.js"
+        data-repo={SITE.giscus.repo}
+        data-repo-id={SITE.giscus.repoId}
+        data-category={SITE.giscus.category}
+        data-category-id={SITE.giscus.categoryId}
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async
+      ></script>
+    </section>
+  </article>
+</Base>

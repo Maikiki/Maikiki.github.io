@@ -1,0 +1,27 @@
+backend:
+  name: github
+  repo: Maikiki/Maikiki.github.io
+  branch: main
+  base_url: https://zhouxiao9.top # 使用 git-gateway 或 OAuth 时按实际情况调整
+
+media_folder: public/img/uploads
+public_folder: /img/uploads
+
+collections:
+  - name: blog
+    label: 文章
+    folder: src/content/blog
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: 标题, name: title, widget: string }
+      - { label: 发布日期, name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: 更新日期, name: updated, widget: datetime, required: false, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: 摘要, name: description, widget: string, required: false }
+      - { label: 分类, name: category, widget: string, default: "未分类" }
+      - { label: 标签, name: tags, widget: list, default: [] }
+      - { label: 显示目录, name: toc, widget: boolean, default: true }
+      - { label: 草稿, name: draft, widget: boolean, default: false }
+      - { label: 正文, name: body, widget: markdown }

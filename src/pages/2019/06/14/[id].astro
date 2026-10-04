@@ -1,0 +1,27 @@
+---
+// 旧版 Hexo 文章链接（/2019/06/14/xxx/）跳转到新地址（/posts/xxx/）
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { id: post.id },
+  }));
+}
+
+const { id } = Astro.params;
+const target = `/posts/${id}/`;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <link rel="canonical" href={target} />
+    <title>页面已迁移</title>
+  </head>
+  <body>
+    <p>页面已迁移至 <a href={target}>{target}</a></p>
+  </body>
+</html>

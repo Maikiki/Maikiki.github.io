@@ -1,0 +1,43 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const fmt = (d: Date) =>
+  d.toLocaleDateString('zh-CN', { month: '2-digit', day: '2-digit' });
+
+const byYear = new Map<number, typeof posts>();
+posts.forEach((p) => {
+  const y = p.data.date.getFullYear();
+  if (!byYear.has(y)) byYear.set(y, []);
+  byYear.get(y)!.push(p);
+});
+
+const years = [...byYear.keys()].sort((a, b) => b - a);
+---
+
+<Base title="归档">
+  <div class="hero">
+    <h1>归档</h1>
+    <p>共 {posts.length} 篇</p>
+  </div>
+
+  {
+    years.map((year) => (
+      <>
+        <h2 class="archive-year">{year}</h2>
+        <ul class="archive-list">
+          {byYear.get(year)!.map((p) => (
+            <li>
+              <time>{fmt(p.data.date)}</time>
+              <a href={`/posts/${p.id}/`}>{p.data.title}</a>
+            </li>
+          ))}
+        </ul>
+      </>
+    ))
+  }
+</Base>
