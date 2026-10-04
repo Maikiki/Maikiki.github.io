@@ -17,11 +17,12 @@ interface Props {
   readingTime: string;
   headings: Heading[];
   showToc?: boolean;
+  cover?: string;
   prev?: { slug: string; title: string } | null;
   next?: { slug: string; title: string } | null;
 }
 
-const { title, date, updated, category, tags, readingTime, headings, showToc = true, prev, next } = Astro.props;
+const { title, date, updated, category, tags, readingTime, headings, showToc = true, cover, prev, next } = Astro.props;
 
 const tocHeadings = headings.filter((h) => h.depth === 2 || h.depth === 3);
 
@@ -29,10 +30,10 @@ const fmt = (d: Date) =>
   d.toLocaleDateString('zh-CN', { year: 'numeric', month: '2-digit', day: '2-digit' });
 ---
 
-<Base title={title}>
+<Base title={title} bannerImage={cover} bannerTitle={title}>
   <article>
     <header class="post-header">
-      <h1>{title}</h1>
+      {!cover && <h1>{title}</h1>}
       <div class="meta">
         <time datetime={date.toISOString()}>{fmt(date)}</time>
         {updated && <span>更新于 {fmt(updated)}</span>}

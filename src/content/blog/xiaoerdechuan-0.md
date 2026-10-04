@@ -5,6 +5,7 @@ description: "你为什么憎恨。那个声音在质问，又是那个声音。
 category: "肖洱的船"
 tags: ["言情"]
 toc: true
+cover: "/img/xiaoer_0.jpeg"
 ---
 
 你为什么憎恨。

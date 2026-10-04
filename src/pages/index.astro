@@ -15,12 +15,7 @@ const allTags = [...new Set(posts.flatMap((p) => p.data.tags))];
 const allCategories = [...new Set(posts.map((p) => p.data.category))];
 ---
 
-<Base>
-  <div class="hero">
-    <h1>{SITE.tagline}</h1>
-    <p>{SITE.description}</p>
-  </div>
-
+<Base bannerImage="/img/header_img/home-bg.png" bannerTitle={SITE.title} bannerSubtitle={SITE.tagline}>
   <ul class="post-list">
     {
       posts.map((post) => (

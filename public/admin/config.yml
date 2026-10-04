@@ -24,5 +24,6 @@ collections:
       - { label: 分类, name: category, widget: string, default: "未分类" }
       - { label: 标签, name: tags, widget: list, default: [] }
       - { label: 显示目录, name: toc, widget: boolean, default: true }
+      - { label: 封面图, name: cover, widget: image, required: false }
       - { label: 草稿, name: draft, widget: boolean, default: false }
       - { label: 正文, name: body, widget: markdown }

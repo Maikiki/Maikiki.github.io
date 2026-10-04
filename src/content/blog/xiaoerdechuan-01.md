@@ -5,6 +5,7 @@ description: "盛夏，蝉鸣。小马市天宁高中二年级三班。"
 category: "肖洱的船"
 tags: ["言情"]
 toc: true
+cover: "/img/xiaoer_0.jpeg"
 ---
 
 盛夏，蝉鸣。

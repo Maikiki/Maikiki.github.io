@@ -12,6 +12,7 @@ const blog = defineCollection({
     category: z.string().default('未分类'),
     draft: z.boolean().default(false),
     toc: z.boolean().default(true),
+    cover: z.string().optional(),
   }),
 });
 

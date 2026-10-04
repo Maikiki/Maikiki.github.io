@@ -11,11 +11,7 @@ const counts = tags.map((tag) => ({
 }));
 ---
 
-<Base title="标签">
-  <div class="hero">
-    <h1>标签</h1>
-    <p>共 {tags.length} 个</p>
-  </div>
+<Base title="标签" bannerImage="/img/header_img/tag-bg.png" bannerTitle="标签" bannerSubtitle={`共 ${tags.length} 个`}>
 
   <div class="tag-cloud">
     {

@@ -57,6 +57,55 @@ a:hover {
   border-bottom-color: var(--accent);
 }
 
+/* ---------- Banner 背景图 ---------- */
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.banner-mask {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-text {
+  text-align: center;
+  color: #fff;
+}
+
+.banner-text h1 {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.05em;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+.banner-text .subheading {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  letter-spacing: 0.1em;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 640px) {
+  .banner {
+    min-height: 280px;
+  }
+  .banner-text h1 {
+    font-size: 1.8rem;
+  }
+}
+
 /* ---------- 布局骨架 ---------- */
 .container {
   max-width: var(--max-w);

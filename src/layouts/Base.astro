@@ -5,9 +5,18 @@ import { SITE } from '../config';
 interface Props {
   title?: string;
   description?: string;
+  bannerImage?: string;
+  bannerTitle?: string;
+  bannerSubtitle?: string;
 }
 
-const { title, description = SITE.description } = Astro.props;
+const {
+  title,
+  description = SITE.description,
+  bannerImage,
+  bannerTitle,
+  bannerSubtitle,
+} = Astro.props;
 const pageTitle = title ? `${title} | ${SITE.title}` : `${SITE.title} | ${SITE.author}`;
 ---
 
@@ -40,6 +49,21 @@ const pageTitle = title ? `${title} | ${SITE.title}` : `${SITE.title} | ${SITE.a
         </nav>
       </div>
     </header>
+
+    {
+      bannerImage && (
+        <div class="banner" style={`background-image: url('${bannerImage}')`}>
+          <div class="banner-mask">
+            <div class="banner-signature">
+              <div class="banner-text container">
+                {bannerTitle && <h1>{bannerTitle}</h1>}
+                {bannerSubtitle && <span class="subheading">{bannerSubtitle}</span>}
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    }
 
     <main class="container">
       <slot />

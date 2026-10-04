@@ -23,11 +23,7 @@ const fmt = (d: Date) =>
   d.toLocaleDateString('zh-CN', { year: 'numeric', month: '2-digit', day: '2-digit' });
 ---
 
-<Base title={`#${tag}`}>
-  <div class="hero">
-    <h1>#{tag}</h1>
-    <p>{posts.length} 篇文章</p>
-  </div>
+<Base title={`#${tag}`} bannerImage="/img/header_img/tag-bg.png" bannerTitle={`#${tag}`} bannerSubtitle={`${posts.length} 篇文章`}>
 
   <ul class="post-list">
     {

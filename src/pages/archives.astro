@@ -19,11 +19,7 @@ posts.forEach((p) => {
 const years = [...byYear.keys()].sort((a, b) => b - a);
 ---
 
-<Base title="归档">
-  <div class="hero">
-    <h1>归档</h1>
-    <p>共 {posts.length} 篇</p>
-  </div>
+<Base title="归档" bannerImage="/img/header_img/archive-bg.png" bannerTitle="归档" bannerSubtitle={`共 ${posts.length} 篇`}>
 
   {
     years.map((year) => (
